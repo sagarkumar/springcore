@@ -1,11 +1,16 @@
 package org.sagarpr;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Person {
 
+
+    @Value("20")
     private int age;
+
+    @Value("Sagar Prajapati")
     private String name;
 
     public Person() {
