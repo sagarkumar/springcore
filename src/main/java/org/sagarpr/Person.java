@@ -1,5 +1,6 @@
 package org.sagarpr;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -13,7 +14,18 @@ public class Person {
     @Value("Sagar Prajapati")
     private String name;
 
+    private Address address;
+
     public Person() {
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    @Autowired
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public Person(int age, String name) {
@@ -42,6 +54,7 @@ public class Person {
         return "Person{" +
                 "age=" + age +
                 ", name='" + name + '\'' +
+                ", address=" + address +
                 '}';
     }
 }
